@@ -1,10 +1,14 @@
 import express, { Express, Request, Response } from 'express';
 import dotenv from 'dotenv';
+// import cors from 'cors';
+var cors = require('cors')
 
 dotenv.config();
 
 const app: Express = express();
 const port = process.env.PORT || 4000;
+
+app.use(cors())
 
 app.get('/first', (req: Request, res: Response) => {
   res.send('First API call througn axios');
