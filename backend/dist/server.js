@@ -8,8 +8,17 @@ const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
 const app = (0, express_1.default)();
 const port = process.env.PORT || 4000;
-app.get('/', (req, res) => {
-    res.send('Express + TypeScript Server');
+app.get('/first', (req, res) => {
+    res.send('First API call througn axios');
+});
+app.get('/second', (req, res) => {
+    res.send('Second API call througn axios');
+});
+app.get('/third', (req, res) => {
+    res.send('Third API call througn axios');
+});
+app.get('/fourth', (req, res) => {
+    res.send('Fourth API call througn axios');
 });
 app.listen(port, () => {
     console.log(`⚡️[server]: Server is running at http://localhost:${port}`);
